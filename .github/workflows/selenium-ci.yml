@@ -18,7 +18,7 @@ jobs:
       - name: Install system packages (Xvfb, Chromedriver)
         run: |
           sudo apt-get update
-          sudo apt-get install -y xvfb chrome-browser, chrome-chromedriver
+          sudo apt-get install -y xvfb google-chrome-stable, chrome-chromedriver
 
       - name: Install Python dependencies
         run: |
