@@ -18,7 +18,7 @@ jobs:
       - name: Install system packages (Xvfb, Chromedriver)
         run: |
           sudo apt-get update
-          sudo apt-get install -y xvfb google-chrome-stable, chrome-chromedriver
+          sudo apt-get install -y xvfb google-chrome-stable chrome-chromedriver
 
       - name: Install Python dependencies
         run: |
@@ -32,11 +32,9 @@ jobs:
 
       - name: Run Pytest
         run: |
-          pytest -m pytest -v --html=report.html --self-contained-html
+          python -m pytest tests
+         
+          
 
-      - name: Upload HTML report
-        uses: actions/upload-artifact@v4
-        with:
-          name: selenium-tests-report
-          path: report.html
+      
 
